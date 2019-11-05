@@ -151,7 +151,7 @@ func newConnector(url, username, password string, verifySslCert, verbose bool, c
 		tr := &http.Transport{
 			TLSClientConfig: &tls.Config{InsecureSkipVerify: !verifySslCert},
 		}
-		client = &http.Client{Transport: tr, Timeout: 3 * time.Second}
+		client = &http.Client{Transport: tr, Timeout: 60 * time.Second}
 	}
 	conn := &vtmConnector{
 		url:           url,
